@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ambuj Bhardwaj | Data & Analytics Leader</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #0A2540;
-            --slate-gray: #6B7280;
-            --off-white: #F9FAFB;
-            --teal: #0EA5A4;
-            --teal-glow: rgba(14, 165, 164, 0.15);
-            --nav-overlay: rgba(249, 250, 251, 0.95);
-            --white: #FFFFFF;
+            color-scheme: dark;
+            --bg: #0a0b0d;
+            --panel: #111317;
+            --panel-soft: #16191e;
+            --line: #282c33;
+            --text: #f4f5f7;
+            --muted: #8f98a5;
+            --accent: #b8ff5a;
+            --accent-dark: #17220c;
+            --danger: #ff7676;
+            --mono: SFMono-Regular, Consolas, "Liberation Mono", monospace;
+
+            /* Backwards-compatible aliases for existing components. */
+            --navy: var(--text);
+            --slate-gray: var(--muted);
+            --off-white: var(--bg);
+            --teal: var(--accent);
+            --teal-glow: rgba(184, 255, 90, 0.14);
+            --nav-overlay: rgba(10, 11, 13, 0.88);
+            --white: var(--panel);
         }
 
         * {
@@ -25,9 +35,11 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--off-white);
-            color: var(--navy);
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at 78% 4%, #253116 0, transparent 32rem),
+                var(--bg);
+            color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -125,14 +137,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Inter', sans-serif;
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             font-size: 1rem;
             color: var(--white);
             font-weight: 600;
         }
 
         .logo-text {
-            font-family: 'Inter', sans-serif;
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             font-size: 1.25rem;
             font-weight: 600;
             letter-spacing: -0.02em;
@@ -285,106 +297,6 @@
             animation: fadeInUp 1s ease-out;
         }
 
-        .hero-image-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .image-wrapper {
-            position: relative;
-            width: 320px;
-            height: 320px;
-        }
-
-        .image-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 360px;
-            height: 360px;
-            background: radial-gradient(circle, var(--teal) 0%, transparent 70%);
-            opacity: 0.15;
-            border-radius: 50%;
-            animation: pulse-glow 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
-            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.25; }
-        }
-
-        .headshot {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--teal);
-            box-shadow: 0 20px 60px rgba(14, 165, 164, 0.2);
-            transition: all 0.5s ease;
-        }
-
-        .headshot:hover {
-            transform: scale(1.05);
-            box-shadow: 0 30px 80px rgba(14, 165, 164, 0.3);
-        }
-
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .floating-element {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            border: 2px solid var(--teal);
-            border-radius: 12px;
-            background: rgba(14, 165, 164, 0.05);
-            backdrop-filter: blur(10px);
-        }
-
-        .element-1 {
-            top: -20px;
-            right: -20px;
-            animation: float-1 6s ease-in-out infinite;
-        }
-
-        .element-2 {
-            bottom: -20px;
-            left: -20px;
-            animation: float-2 7s ease-in-out infinite;
-        }
-
-        .element-3 {
-            top: 50%;
-            right: -40px;
-            width: 40px;
-            height: 40px;
-            animation: float-3 5s ease-in-out infinite;
-        }
-
-        @keyframes float-1 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-10px, -10px) rotate(5deg); }
-        }
-
-        @keyframes float-2 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(10px, 10px) rotate(-5deg); }
-        }
-
-        @keyframes float-3 {
-            0%, 100% { transform: translate(0, -50%) rotate(0deg); }
-            50% { transform: translate(-15px, -50%) rotate(10deg); }
-        }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -412,7 +324,7 @@
         }
 
         h1 {
-            font-family: 'Inter', sans-serif;
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             font-size: clamp(2.5rem, 5vw, 4rem);
             line-height: 1.1;
             margin-bottom: 1rem;
@@ -512,7 +424,7 @@
         }
 
         .stat-number {
-            font-family: 'Inter', sans-serif;
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             font-size: 1.75rem;
             font-weight: 600;
             color: var(--teal);
@@ -546,7 +458,7 @@
         }
 
         h2 {
-            font-family: 'Inter', sans-serif;
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             font-size: clamp(2rem, 4vw, 3rem);
             line-height: 1.2;
             margin-bottom: 1.5rem;
@@ -595,7 +507,7 @@
         }
 
         .impact-number {
-            font-family: 'Inter', sans-serif;
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             font-size: 2.5rem;
             font-weight: 600;
             color: var(--teal);
@@ -701,7 +613,7 @@
         }
 
         h3 {
-            font-family: 'Inter', sans-serif;
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
             font-weight: 600;
@@ -722,11 +634,6 @@
             font-size: 0.875rem;
             font-weight: 600;
             white-space: nowrap;
-        }
-
-        .current-badge {
-            background: var(--teal);
-            color: var(--white);
         }
 
         .location {
@@ -980,7 +887,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Inter', sans-serif;
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             font-size: 0.95rem;
             font-weight: 600;
             color: var(--white);
@@ -1053,25 +960,6 @@
                 padding: 1.5rem 0;
             }
 
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .hero-image-container {
-                order: -1;
-            }
-
-            .image-wrapper {
-                width: 220px;
-                height: 220px;
-            }
-
-            .image-glow {
-                width: 260px;
-                height: 260px;
-            }
-
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 0.75rem;
@@ -1116,16 +1004,6 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .image-wrapper {
-                width: 180px;
-                height: 180px;
-            }
-
-            .image-glow {
-                width: 220px;
-                height: 220px;
-            }
-
             .logo-text {
                 display: none;
             }
@@ -1142,6 +1020,586 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Dark lime theme */
+        nav {
+            border-color: var(--line);
+        }
+
+        .brand-mark {
+            width: 40px;
+            height: 40px;
+            flex: 0 0 40px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 3px;
+            padding-bottom: 10px;
+            background: var(--panel);
+            border: 1px solid rgba(184, 255, 90, 0.42);
+            border-radius: 8px;
+        }
+
+        .brand-mark > span {
+            width: 3px;
+            background: var(--accent);
+            border-radius: 1px 1px 0 0;
+        }
+
+        .brand-mark > span:nth-child(1) {
+            height: 7px;
+            opacity: 0.55;
+        }
+
+        .brand-mark > span:nth-child(2) {
+            height: 12px;
+            opacity: 0.75;
+        }
+
+        .brand-mark > span:nth-child(3) {
+            height: 18px;
+        }
+
+        .brand-mark--footer {
+            width: 36px;
+            height: 36px;
+            flex-basis: 36px;
+            padding-bottom: 9px;
+            border-radius: 7px;
+        }
+
+        .brand-mark--footer > span:nth-child(1) { height: 6px; }
+        .brand-mark--footer > span:nth-child(2) { height: 10px; }
+        .brand-mark--footer > span:nth-child(3) { height: 15px; }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .footer-brand__name,
+        .footer-brand__role {
+            display: block;
+        }
+
+        .footer-brand__name {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .footer-brand__role {
+            color: var(--muted);
+        }
+
+        .logo:focus-visible,
+        .footer-brand:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+            border-radius: 8px;
+        }
+
+        .nav-cta,
+        .cta-primary,
+        .contact-cta-btn {
+            color: var(--bg) !important;
+        }
+
+        .nav-cta:hover,
+        .cta-primary:hover,
+        .contact-cta-btn:hover {
+            background: var(--text);
+            box-shadow: 0 12px 36px rgba(184, 255, 90, 0.16);
+        }
+
+        nav.nav-open .nav-links,
+        .stat-item,
+        .impact-card,
+        .experience-card,
+        .skill-category,
+        .contact-info-card {
+            background: var(--panel);
+            border-color: var(--line);
+            box-shadow: none;
+        }
+
+        .stat-item:hover,
+        .impact-card:hover,
+        .experience-card:hover,
+        .skill-category:hover {
+            background: var(--panel-soft);
+            border-color: rgba(184, 255, 90, 0.55);
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+        }
+
+        .skill-list li,
+        footer {
+            border-color: var(--line);
+        }
+
+        .date-badge,
+        .tech-tag,
+        .contact-link,
+        .hero-label {
+            background: var(--accent-dark);
+            border-color: rgba(184, 255, 90, 0.24);
+        }
+
+        .contact-link:hover,
+        .tech-tag:hover {
+            background: #202f11;
+        }
+
+        .footer-social a {
+            background: var(--panel);
+            border-color: var(--line);
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+        }
+
+        .footer-social a:hover svg,
+        .contact-link-icon svg {
+            fill: var(--bg);
+        }
+
+        .hero {
+            min-height: 0;
+            display: block;
+            padding: clamp(1.5rem, 4vw, 3.5rem) 0 clamp(2rem, 5vw, 4rem);
+            overflow: hidden;
+        }
+
+        .hero-brief {
+            position: relative;
+            border-block: 1px solid var(--line);
+            background: linear-gradient(90deg, rgba(184, 255, 90, 0.035), transparent 48%), var(--panel);
+        }
+
+        .hero-brief::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: radial-gradient(rgba(184, 255, 90, 0.14) 0.7px, transparent 0.7px);
+            background-size: 18px 18px;
+            mask-image: linear-gradient(90deg, transparent, black 70%, transparent);
+            opacity: 0.35;
+        }
+
+        .hero-layout {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.45fr) minmax(270px, 0.75fr);
+        }
+
+        .hero-copy {
+            padding: clamp(1.75rem, 3.5vw, 3.25rem);
+        }
+
+        .hero-eyebrow {
+            margin-bottom: 0.85rem;
+            color: var(--accent);
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            max-width: 760px;
+            margin: 0;
+            color: var(--text);
+            font-size: clamp(2.45rem, 5vw, 4.5rem);
+            font-weight: 600;
+            line-height: 0.98;
+            letter-spacing: -0.055em;
+            animation: none;
+        }
+
+        .hero-title em {
+            color: var(--accent);
+            font-style: normal;
+        }
+
+        .hero-summary {
+            max-width: 650px;
+            margin: 1.2rem 0 0;
+            color: var(--muted);
+            font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            margin-top: 1.4rem;
+        }
+
+        .hero-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.1rem;
+            min-width: 180px;
+            padding: 0.72rem 0.9rem;
+            border: 1px solid var(--line);
+            color: var(--text);
+            font-size: 0.84rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 180ms ease, border-color 180ms ease;
+        }
+
+        .hero-action--primary {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .hero-action--secondary:hover {
+            border-color: var(--accent);
+            background: var(--accent-dark);
+        }
+
+        .hero-scope {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 1rem;
+            margin-top: 1.25rem;
+            list-style: none;
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 0.66rem;
+        }
+
+        .hero-scope li::before {
+            content: "/";
+            margin-right: 0.4rem;
+            color: var(--accent);
+        }
+
+        .hero-photo {
+            position: relative;
+            min-height: 100%;
+            margin: 0;
+            overflow: hidden;
+            border-left: 1px solid var(--line);
+            background: var(--panel-soft);
+        }
+
+        .hero-photo::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 11, 13, 0.92), transparent 52%);
+            pointer-events: none;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            display: block;
+            object-fit: cover;
+            object-position: center 24%;
+            filter: saturate(0.82) contrast(1.06);
+        }
+
+        .hero-photo figcaption {
+            position: absolute;
+            right: 1.25rem;
+            bottom: 1.15rem;
+            left: 1.25rem;
+            z-index: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .hero-photo__name {
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .hero-photo__location {
+            color: var(--accent);
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            letter-spacing: 0.04em;
+            text-align: right;
+            text-transform: uppercase;
+        }
+
+        .company-role {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 12.5rem;
+            align-items: center;
+            gap: 0.75rem 1.5rem;
+        }
+
+        .company-role > div {
+            min-width: 0;
+        }
+
+        .date-badge {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            justify-self: end;
+            align-self: center;
+            width: 12.5rem;
+            height: 2.375rem;
+            padding: 0 1rem;
+            border: 1px solid rgba(184, 255, 90, 0.24);
+            border-radius: 999px;
+            background: var(--accent-dark);
+            color: var(--accent);
+            font-size: 0.875rem;
+            font-weight: 600;
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .timeline-item.current .date-badge::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0.625rem;
+            width: 0.375rem;
+            height: 0.375rem;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0.5rem rgba(184, 255, 90, 0.55);
+            transform: translateY(-50%);
+        }
+
+        .experience-card {
+            padding: 0;
+            overflow: clip;
+        }
+
+        .experience-card:hover {
+            transform: none;
+        }
+
+        .experience-summary {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.5rem minmax(0, 1fr) 2rem;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 0;
+            padding: 1rem 1.15rem 1rem 1.25rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 0.75rem;
+            padding-left: 0;
+            counter-reset: experience;
+        }
+
+        .timeline::before,
+        .timeline-item::before {
+            content: none;
+        }
+
+        .timeline-item {
+            margin-bottom: 0;
+            counter-increment: experience;
+        }
+
+        .experience-summary::before {
+            content: counter(experience, decimal-leading-zero);
+            position: static;
+            grid-column: 1;
+            align-self: center;
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+        }
+
+        .experience-summary .company-role {
+            grid-column: 2;
+            align-self: center;
+            margin-bottom: 0;
+        }
+
+        .experience-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .experience-summary::after {
+            content: "";
+            position: static;
+            grid-column: 3;
+            align-self: center;
+            justify-self: end;
+            display: grid;
+            width: 2rem;
+            height: 2rem;
+            place-items: center;
+            border: 1px solid rgba(184, 255, 90, 0.4);
+            border-radius: 50%;
+            color: var(--accent);
+            background:
+                linear-gradient(var(--accent), var(--accent)) center / 10px 1.5px no-repeat,
+                linear-gradient(var(--accent), var(--accent)) center / 1.5px 10px no-repeat;
+            transition: border-color 0.25s ease, background-color 0.25s ease;
+        }
+
+        .experience-card[open] .experience-summary::after {
+            background:
+                linear-gradient(var(--accent), var(--accent)) center / 10px 1.5px no-repeat,
+                var(--accent-dark);
+        }
+
+        .experience-summary:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: -3px;
+            border-radius: 15px;
+        }
+
+        .experience-content {
+            padding: 0 1.25rem 1.25rem 3.5rem;
+        }
+
+        .experience-summary h3 {
+            margin-bottom: 0.15rem;
+            font-size: 1.15rem;
+            line-height: 1.25;
+        }
+
+        .experience-summary .role-title {
+            font-size: 0.9rem;
+            line-height: 1.3;
+        }
+
+        .role-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.35rem 0.75rem;
+        }
+
+        .experience-summary .location {
+            margin: 0;
+            font-size: 0.78rem;
+            line-height: 1.3;
+        }
+
+        .experience-summary .location::before {
+            content: "·";
+            margin-right: 0.75rem;
+            color: var(--line);
+        }
+
+        .experience-card[open] .experience-content {
+            animation: experienceReveal 0.3s ease-out;
+        }
+
+        @keyframes experienceReveal {
+            from { opacity: 0; transform: translateY(-0.5rem); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 1.25rem;
+            }
+
+            .hero-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-copy {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .hero-title {
+                font-size: clamp(2.35rem, 12vw, 3.5rem);
+            }
+
+            .hero-photo {
+                min-height: 360px;
+                border-top: 1px solid var(--line);
+                border-left: 0;
+            }
+
+            .hero-photo img {
+                min-height: 360px;
+                max-height: 480px;
+            }
+
+            .company-role {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .date-badge {
+                justify-self: start;
+            }
+
+            .experience-card {
+                padding: 0;
+            }
+
+            .experience-summary {
+                grid-template-columns: 1.5rem minmax(0, 1fr) 2rem;
+                padding: 0.9rem 1rem;
+            }
+
+            .experience-content {
+                padding: 0 1rem 1rem 3.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-action {
+                width: 100%;
+            }
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .experience-card:hover {
+                transform: translateX(10px);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .timeline-item {
+                opacity: 1;
+                animation: none;
+            }
+
+            .timeline-item.current::before,
+            .experience-card[open] .experience-content {
+                animation: none;
+            }
+
+            .hero-action,
+            .experience-card,
+            .experience-summary::after {
+                transition: none;
+            }
+        }
     </style>
 
     <!-- SEO Meta & Social Sharing Tags (added for crawlability and rich previews) -->
@@ -1156,7 +1614,7 @@
     <meta property="og:title" content="Ambuj Bhardwaj | Data Analytics Leader">
     <meta property="og:description"
           content="Data analytics professional with 9+ years of experience in BI strategy, data platforms, Power BI, Apache Superset, Databricks, and enterprise-scale analytics impact.">
-    <meta property="og:image" content="https://ambuj93.github.io/portfolio/assets/headshot.png">
+    <meta property="og:image" content="https://static.topmate.io/h17CEkRYgc9u7SWz4aoZa2.jpg">
     <meta property="og:url" content="https://ambuj93.github.io/portfolio/">
     <meta property="og:type" content="profile">
     <meta property="og:site_name" content="Ambuj Bhardwaj Portfolio">
@@ -1166,7 +1624,7 @@
     <meta name="twitter:title" content="Ambuj Bhardwaj | Data Analytics Leader">
     <meta name="twitter:description"
           content="9+ years in data analytics, BI strategy, and data platforms. Power BI, Superset, Databricks.">
-    <meta name="twitter:image" content="https://ambuj93.github.io/portfolio/assets/headshot.png">
+    <meta name="twitter:image" content="https://static.topmate.io/h17CEkRYgc9u7SWz4aoZa2.jpg">
 
     <!-- JSON-LD structured data for Person, ProfilePage, and WebSite -->
     <script type="application/ld+json">
@@ -1176,7 +1634,7 @@
       "@id": "https://ambuj93.github.io/portfolio/#ambuj-bhardwaj",
       "name": "Ambuj Bhardwaj",
       "url": "https://ambuj93.github.io/portfolio/",
-      "image": "https://ambuj93.github.io/portfolio/assets/headshot.png",
+      "image": "https://static.topmate.io/h17CEkRYgc9u7SWz4aoZa2.jpg",
       "jobTitle": "Data Analytics Leader",
       "description": "Data analytics leader with over 9 years of experience in BI strategy, data platforms, and enterprise analytics delivering measurable business impact.",
       "sameAs": [
@@ -1240,15 +1698,17 @@
     }
     </script>
 </head>
-<body>
+<body id="top">
     <!-- <div class="background-grid"></div>
     <div class="gradient-orb orb-1"></div>
     <div class="gradient-orb orb-2"></div> -->
 
-    <nav>
+    <nav aria-label="Primary navigation">
         <div class="container">
-            <a href="#" class="logo">
-                <div class="logo-icon">AB</div>
+            <a href="#top" class="logo" aria-label="Ambuj Bhardwaj, home">
+                <span class="brand-mark" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </span>
                 <span class="logo-text">Ambuj Bhardwaj</span>
             </a>
             <ul class="nav-links">
@@ -1265,27 +1725,46 @@
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
         <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <span class="hero-label">Business Intelligence Leader</span>
-                    <h1>Architecting Data<br>Analytics Platforms<br>that Scale</h1>
-                    <p class="hero-description">
-                        From analyst to architect, I've spent <span id="hero-years-exp">9+</span> years transforming raw data into strategic assets. I specialize in building self-serve analytics platforms, optimizing BI infrastructure, and leading teams that deliver measurable business impact.
-                    </p>
-                    
-                </div>
-                <div class="hero-image-container">
-                    <div class="image-wrapper">
-                        <div class="image-glow"></div>
-                        <img src="./assets/headshot.png" alt="Professional Headshot" class="headshot">
-                        <div class="floating-elements">
-                            <div class="floating-element element-1"></div>
-                            <div class="floating-element element-2"></div>
-                            <div class="floating-element element-3"></div>
+            <div class="hero-brief">
+                <div class="hero-layout">
+                    <div class="hero-copy">
+                        <p class="hero-eyebrow">Business Intelligence Architect · 10 years in analytics</p>
+                        <h1 id="hero-title" class="hero-title">
+                            I help businesses design <em>scalable analytics systems</em> — from data warehouse architecture and BI platforms to self-service analytics and AI-ready data layers.
+                        </h1>
+                        <div class="hero-actions">
+                            <a class="hero-action hero-action--primary" href="#impact">
+                                Explore my impact <span aria-hidden="true">↘</span>
+                            </a>
+                            <a class="hero-action hero-action--secondary"
+                               href="https://www.linkedin.com/in/ambuj-bhardwaj/"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Connect on LinkedIn <span aria-hidden="true">↗</span>
+                            </a>
                         </div>
+                        <ul class="hero-scope" aria-label="Areas of expertise">
+                            <li>Platform architecture</li>
+                            <li>Self-service BI</li>
+                            <li>Performance engineering</li>
+                            <li>Analytics leadership</li>
+                        </ul>
                     </div>
+
+                    <figure class="hero-photo">
+                        <img src="https://static.topmate.io/h17CEkRYgc9u7SWz4aoZa2.jpg"
+                             alt="Ambuj Bhardwaj"
+                             width="640"
+                             height="640"
+                             fetchpriority="high"
+                             decoding="async">
+                        <figcaption>
+                            <span class="hero-photo__name">Ambuj Bhardwaj</span>
+                            <span class="hero-photo__location">Bangalore · India</span>
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
@@ -1366,129 +1845,145 @@
 
             <div class="timeline">
                 <div class="timeline-item current">
-                    <div class="experience-card">
-                        <div class="experience-header">
+                    <details class="experience-card">
+                        <summary class="experience-header experience-summary">
                             <div class="company-role">
                                 <div>
                                     <h3>Skan AI</h3>
-                                    <div class="role-title">Business Intelligence Architect</div>
+                                    <div class="role-meta">
+                                        <span class="role-title">Business Intelligence Architect</span>
+                                        <span class="location">Bangalore, India</span>
+                                    </div>
                                 </div>
-                                <span class="date-badge current-badge">Jun 2024 - Present</span>
+                                <span class="date-badge">Jun 2024 - Present</span>
                             </div>
-                            <div class="location">📍 Bangalore, India</div>
+                        </summary>
+                        <div class="experience-content">
+                            <p class="experience-description">
+                                Leading BI strategy and architecture for a fast-paced process mining startup, managing entire data and analytics platforms while working with large-scale streaming and batch processed clickstream data.
+                            </p>
+                            <ul class="highlights">
+                                <li><strong>Cost Optimization:</strong> Reduced Power BI capacity usage from 85% to 45% and Databricks DBU consumption by 58% through strategic data refresh alignment</li>
+                                <li><strong>Performance Engineering:</strong> Achieved 80% faster report refresh times and 98% reduction in data size through data warehouse design</li>
+                                <li><strong>Platform Migration:</strong> Led multi-phase transition to Apache Superset, building team capability with new hires and defining implementation roadmap for on-prem deployment</li>
+                                <li><strong>Innovation:</strong> Built PBI Doctor - a Python GUI app for Power BI metadata extraction and technical documentation, presented company-wide</li>
+                                <li><strong>Team Leadership:</strong> Built and led teams of 3 analysts + 1 engineer (direct) and 10 customer-facing analysts (indirect)</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Databricks</span>
+                                <span class="tech-tag">Power BI</span>
+                                <span class="tech-tag">Apache Superset</span>
+                                <span class="tech-tag">Postgres SQL</span>
+                                <span class="tech-tag">StarRocks</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">PySpark</span>
+                                <span class="tech-tag">Cursor</span>
+                            </div>
                         </div>
-                        <p class="experience-description">
-                            Leading BI strategy and architecture for a fast-paced process mining startup, managing entire data and analytics platforms while working with large-scale streaming and batch processed clickstream data.
-                        </p>
-                        <ul class="highlights">
-                            <li><strong>Cost Optimization:</strong> Reduced Power BI capacity usage from 85% to 45% and Databricks DBU consumption by 58% through strategic data refresh alignment</li>
-                            <li><strong>Performance Engineering:</strong> Achieved 80% faster report refresh times and 98% reduction in data size through data warehouse design</li>
-                            <li><strong>Platform Migration:</strong> Led multi-phase transition to Apache Superset, building team capability with new hires and defining implementation roadmap for on-prem deployment</li>
-                            <li><strong>Innovation:</strong> Built PBI Doctor - a Python GUI app for Power BI metadata extraction and technical documentation, presented company-wide</li>
-                            <li><strong>Team Leadership:</strong> Built and led teams of 3 analysts + 1 engineer (direct) and 10 customer-facing analysts (indirect)</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Databricks</span>
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">Apache Superset</span>
-                            <span class="tech-tag">Postgres SQL</span>
-                            <span class="tech-tag">StarRocks</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PySpark</span>
-                            <span class="tech-tag">Cursor</span>
-                        </div>
-                    </div>
+                    </details>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="experience-card">
-                        <div class="experience-header">
+                    <details class="experience-card">
+                        <summary class="experience-header experience-summary">
                             <div class="company-role">
                                 <div>
                                     <h3>Citrix (Cloud Software Group)</h3>
-                                    <div class="role-title">Senior BI & Analytics Analyst</div>
+                                    <div class="role-meta">
+                                        <span class="role-title">Senior BI & Analytics Analyst</span>
+                                        <span class="location">Bangalore, India</span>
+                                    </div>
                                 </div>
                                 <span class="date-badge">May 2022 - May 2024</span>
                             </div>
-                            <div class="location">📍 Bangalore, India</div>
+                        </summary>
+                        <div class="experience-content">
+                            <p class="experience-description">
+                                Partnered with Customer Support, Technical Support, and Leadership teams to build reliable analytics foundations and drive operational efficiency improvements.
+                            </p>
+                            <ul class="highlights">
+                                <li><strong>Self-Service Analytics:</strong> Eliminated 95% of adhoc data requests by building a trustworthy self-serve Power BI platform with data from Salesforce, SQL Server, Genesys, and GCP</li>
+                                <li><strong>Dashboard Consolidation:</strong> Led migration from 120 Tableau dashboards to 3 comprehensive Power BI solutions, mentoring team of 3 analysts</li>
+                                <li><strong>Leaderboard Redesign:</strong> Influenced leadership to adopt new scoring system, creating most-used internal product with 100+ daily active users</li>
+                                <li><strong>Process Improvement:</strong> Reduced backlog from 21% to 13% and avg case age from 30 to 12 days through automated tracking</li>
+                                <li><strong>Data Governance:</strong> Built auditable data models, documented definitions, and implemented Git version control</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Power BI</span>
+                                <span class="tech-tag">Tableau</span>
+                                <span class="tech-tag">MS SQL Server</span>
+                                <span class="tech-tag">Salesforce</span>
+                                <span class="tech-tag">Git</span>
+                                <span class="tech-tag">Confluence</span>
+                            </div>
                         </div>
-                        <p class="experience-description">
-                            Partnered with Customer Support, Technical Support, and Leadership teams to build reliable analytics foundations and drive operational efficiency improvements.
-                        </p>
-                        <ul class="highlights">
-                            <li><strong>Self-Service Analytics:</strong> Eliminated 95% of adhoc data requests by building a trustworthy self-serve Power BI platform with data from Salesforce, SQL Server, Genesys, and GCP</li>
-                            <li><strong>Dashboard Consolidation:</strong> Led migration from 120 Tableau dashboards to 3 comprehensive Power BI solutions, mentoring team of 3 analysts</li>
-                            <li><strong>Leaderboard Redesign:</strong> Influenced leadership to adopt new scoring system, creating most-used internal product with 100+ daily active users</li>
-                            <li><strong>Process Improvement:</strong> Reduced backlog from 21% to 13% and avg case age from 30 to 12 days through automated tracking</li>
-                            <li><strong>Data Governance:</strong> Built auditable data models, documented definitions, and implemented Git version control</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">Tableau</span>
-                            <span class="tech-tag">MS SQL Server</span>
-                            <span class="tech-tag">Salesforce</span>
-                            <span class="tech-tag">Git</span>
-                            <span class="tech-tag">Confluence</span>
-                        </div>
-                    </div>
+                    </details>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="experience-card">
-                        <div class="experience-header">
+                    <details class="experience-card">
+                        <summary class="experience-header experience-summary">
                             <div class="company-role">
                                 <div>
                                     <h3>Citrix (Cloud Software Group)</h3>
-                                    <div class="role-title">BI & Analytics Analyst</div>
+                                    <div class="role-meta">
+                                        <span class="role-title">BI & Analytics Analyst</span>
+                                        <span class="location">Bangalore, India</span>
+                                    </div>
                                 </div>
                                 <span class="date-badge">Feb 2020 - Apr 2022</span>
                             </div>
-                            <div class="location">📍 Bangalore, India</div>
+                        </summary>
+                        <div class="experience-content">
+                            <p class="experience-description">
+                                Partnered with Customer Success and Technical Support Escalations teams to deliver analytics dashboards, forecasts, and data-driven insights.
+                            </p>
+                            <ul class="highlights">
+                                <li><strong>Performance Optimization:</strong> Improved Tableau dashboard performance by 97% through SQL optimization and lean data modeling</li>
+                                <li><strong>Forecasting Model:</strong> Built case volume prediction model with 87% ±5% accuracy using novel approach blending customer base, offerings, and churn data</li>
+                                <li><strong>Automation Impact:</strong> Reduced QBR creation time from 2 days to 5 minutes with click-to-PowerPoint dashboard</li>
+                                <li><strong>Dashboard Portfolio:</strong> Built 12 dashboards tracking NPS, case volume, deals, product lines, FDR, FCR, and case metrics</li>
+                                <li><strong>Knowledge Sharing:</strong> Evangelized SQL adoption, organized training sessions across departments</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Tableau</span>
+                                <span class="tech-tag">SQL</span>
+                                <span class="tech-tag">Excel</span>
+                            </div>
                         </div>
-                        <p class="experience-description">
-                            Partnered with Customer Success and Technical Support Escalations teams to deliver analytics dashboards, forecasts, and data-driven insights.
-                        </p>
-                        <ul class="highlights">
-                            <li><strong>Performance Optimization:</strong> Improved Tableau dashboard performance by 97% through SQL optimization and lean data modeling</li>
-                            <li><strong>Forecasting Model:</strong> Built case volume prediction model with 87% ±5% accuracy using novel approach blending customer base, offerings, and churn data</li>
-                            <li><strong>Automation Impact:</strong> Reduced QBR creation time from 2 days to 5 minutes with click-to-PowerPoint dashboard</li>
-                            <li><strong>Dashboard Portfolio:</strong> Built 12 dashboards tracking NPS, case volume, deals, product lines, FDR, FCR, and case metrics</li>
-                            <li><strong>Knowledge Sharing:</strong> Evangelized SQL adoption, organized training sessions across departments</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Tableau</span>
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Excel</span>
-                        </div>
-                    </div>
+                    </details>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="experience-card">
-                        <div class="experience-header">
+                    <details class="experience-card">
+                        <summary class="experience-header experience-summary">
                             <div class="company-role">
                                 <div>
                                     <h3>Tata Consultancy Services</h3>
-                                    <div class="role-title">Systems Analyst / Data Analyst</div>
+                                    <div class="role-meta">
+                                        <span class="role-title">Systems Analyst / Data Analyst</span>
+                                        <span class="location">Bangalore, India</span>
+                                    </div>
                                 </div>
                                 <span class="date-badge">Sep 2016 - Jan 2020</span>
                             </div>
-                            <div class="location">📍 Bangalore, India</div>
+                        </summary>
+                        <div class="experience-content">
+                            <p class="experience-description">
+                                Solved operational inefficiencies through data analysis, MIS reporting, and automation initiatives across Insurance, Aerospace, and Process Improvement domains.
+                            </p>
+                            <ul class="highlights">
+                                <li><strong>Cost Savings:</strong> Delivered ~$1M annual savings through document search automation and workflow optimization</li>
+                                <li><strong>Search Engine:</strong> Built VBA-based search engine using NLP concepts for fast discovery from large Excel-based process documentation</li>
+                                <li><strong>ETL Automation:</strong> Created VBA scripts for data extraction from Excel/PDF and transformation into reporting-ready formats</li>
+                                <li><strong>Reporting:</strong> Developed utilization, billable vs non-billable effort, and project progress dashboards</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Excel</span>
+                                <span class="tech-tag">VBA</span>
+                            </div>
                         </div>
-                        <p class="experience-description">
-                            Solved operational inefficiencies through data analysis, MIS reporting, and automation initiatives across Insurance, Aerospace, and Process Improvement domains.
-                        </p>
-                        <ul class="highlights">
-                            <li><strong>Cost Savings:</strong> Delivered ~$1M annual savings through document search automation and workflow optimization</li>
-                            <li><strong>Search Engine:</strong> Built VBA-based search engine using NLP concepts for fast discovery from large Excel-based process documentation</li>
-                            <li><strong>ETL Automation:</strong> Created VBA scripts for data extraction from Excel/PDF and transformation into reporting-ready formats</li>
-                            <li><strong>Reporting:</strong> Developed utilization, billable vs non-billable effort, and project progress dashboards</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">VBA</span>
-                        </div>
-                    </div>
+                    </details>
                 </div>
             </div>
         </div>
@@ -1640,13 +2135,15 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-left">
-                    <div class="footer-logo-icon">AB</div>
-                    <div>
-                        <p class="footer-text" style="color: var(--navy); font-weight: 500;">Ambuj Bhardwaj</p>
-                        <p class="footer-text">Business Intelligence Architect</p>
-                    </div>
-                </div>
+                <a href="#top" class="footer-brand" aria-label="Ambuj Bhardwaj, back to top">
+                    <span class="brand-mark brand-mark--footer" aria-hidden="true">
+                        <span></span><span></span><span></span>
+                    </span>
+                    <span>
+                        <span class="footer-brand__name">Ambuj Bhardwaj</span>
+                        <span class="footer-brand__role">Business Intelligence Architect</span>
+                    </span>
+                </a>
                 <p class="footer-text">📍 Bangalore, India</p>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/in/ambuj-bhardwaj/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -1851,7 +2348,13 @@
     <script type="text/javascript">window.DocsBotAI=window.DocsBotAI||{},DocsBotAI.init=function(e){return new Promise((t,r)=>{var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://widget.docsbot.ai/chat.js";let o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o),n.addEventListener("load",()=>{let n;Promise.all([new Promise((t,r)=>{window.DocsBotAI.mount(Object.assign({}, e)).then(t).catch(r)}),(n=function e(t){return new Promise(e=>{if(document.querySelector(t))return e(document.querySelector(t));let r=new MutationObserver(n=>{if(document.querySelector(t))return e(document.querySelector(t)),r.disconnect()});r.observe(document.body,{childList:!0,subtree:!0})})})("#docsbotai-root"),]).then(()=>t()).catch(r)}),n.addEventListener("error",e=>{r(e.message)})})};</script>
     <div id="docsbotai-root" aria-hidden="true"></div>
     <script type="text/javascript">
-      DocsBotAI.init({id: "KjVVCfk7cLdDV7gbNao6/SdBKapgqbe6qndGsujdl"});
+      DocsBotAI.init({
+        id: "KjVVCfk7cLdDV7gbNao6/SdBKapgqbe6qndGsujdl",
+        options: {
+          color: "#b8ff5a",
+          theme: "dark"
+        }
+      });
     </script>
 </body>
 </html>
