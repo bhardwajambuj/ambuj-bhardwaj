@@ -1521,6 +1521,165 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Case Studies */
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .case-study-card {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+        }
+
+        .case-study-header {
+            min-height: 15.25rem;
+            padding: 2rem;
+        }
+
+        .case-study-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.85rem;
+            margin-bottom: 1rem;
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .case-study-meta span + span::before {
+            content: "/";
+            margin-right: 0.85rem;
+            color: var(--accent);
+        }
+
+        .case-study-card h3 {
+            margin-bottom: 0.85rem;
+            color: var(--text);
+            font-size: clamp(1.45rem, 2.3vw, 2rem);
+            line-height: 1.2;
+        }
+
+        .case-study-lead {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .case-study-results {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            border-block: 1px solid var(--line);
+            background: var(--bg);
+        }
+
+        .case-study-result {
+            min-width: 0;
+            padding: 1.25rem;
+            border-right: 1px solid var(--line);
+        }
+
+        .case-study-result:last-child {
+            border-right: 0;
+        }
+
+        .case-study-result strong {
+            display: block;
+            margin-bottom: 0.4rem;
+            color: var(--accent);
+            font-family: var(--mono);
+            font-size: clamp(1.4rem, 2.4vw, 2rem);
+            line-height: 1;
+        }
+
+        .case-study-result span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.75rem;
+            line-height: 1.45;
+        }
+
+        .case-study-details {
+            margin-top: auto;
+        }
+
+        .case-study-details summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 52px;
+            padding: 0.9rem 2rem;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.88rem;
+            font-weight: 600;
+            list-style: none;
+        }
+
+        .case-study-details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .case-study-details summary::after {
+            content: "+";
+            color: var(--accent);
+            font-family: var(--mono);
+            font-size: 1.2rem;
+        }
+
+        .case-study-details[open] summary {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .case-study-details[open] summary::after {
+            content: "−";
+        }
+
+        .case-study-body {
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        .case-study-block + .case-study-block {
+            margin-top: 1.35rem;
+        }
+
+        .case-study-block h4 {
+            margin-bottom: 0.45rem;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .case-study-block p,
+        .case-study-block li {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        .case-study-block ul {
+            margin: 0;
+            padding-left: 1.15rem;
+        }
+
+        .case-study-block li + li {
+            margin-top: 0.35rem;
+        }
+
+        .case-study-note {
+            padding: 0.9rem 1rem;
+            background: var(--accent-dark);
+            border-left: 2px solid var(--accent);
+            color: var(--muted);
+            font-size: 0.78rem;
+            line-height: 1.55;
+        }
+
         @media (max-width: 768px) {
             .hero {
                 padding-top: 1.25rem;
@@ -1737,9 +1896,51 @@
             }
 
             .impact-grid,
-            .skills-grid {
+            .skills-grid,
+            .case-studies-grid {
                 grid-template-columns: minmax(0, 1fr);
                 gap: 0.85rem;
+            }
+
+            .case-study-header {
+                min-height: 0;
+                padding: 1.35rem;
+            }
+
+            .case-study-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .case-study-results {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .case-study-result {
+                display: grid;
+                grid-template-columns: 5.5rem minmax(0, 1fr);
+                align-items: center;
+                gap: 0.75rem;
+                padding: 0.9rem 1.35rem;
+                border-right: 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .case-study-result:last-child {
+                border-bottom: 0;
+            }
+
+            .case-study-result strong {
+                margin-bottom: 0;
+                font-size: 1.45rem;
+            }
+
+            .case-study-details summary {
+                min-height: 48px;
+                padding-inline: 1.35rem;
+            }
+
+            .case-study-body {
+                padding: 1.25rem 1.35rem 1.5rem;
             }
 
             .impact-card {
@@ -2033,6 +2234,54 @@
       "inLanguage": "en"
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Data Analytics Case Studies by Ambuj Bhardwaj",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://ambuj93.github.io/portfolio/#case-volume-forecasting",
+            "url": "https://ambuj93.github.io/portfolio/#case-volume-forecasting",
+            "name": "Forecasting Case Volume for 24/7 Critical Support",
+            "description": "A Citrix workforce-planning case study combining support demand, customer growth, offering mix, and churn to forecast case volume and recommend staffing across three shifts.",
+            "author": {
+              "@id": "https://ambuj93.github.io/portfolio/#ambuj-bhardwaj"
+            },
+            "about": [
+              "Demand Forecasting",
+              "Workforce Planning",
+              "Support Analytics"
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://ambuj93.github.io/portfolio/#knowledge-center-governance",
+            "url": "https://ambuj93.github.io/portfolio/#knowledge-center-governance",
+            "name": "Turning a 35,000-Article Knowledge Library into a Governed Data Asset",
+            "description": "A Citrix knowledge-governance case study covering content cleanup, usage-based classification, review monitoring, and preparation for self-service and AI retrieval.",
+            "author": {
+              "@id": "https://ambuj93.github.io/portfolio/#ambuj-bhardwaj"
+            },
+            "about": [
+              "Knowledge Management",
+              "Content Governance",
+              "Self-Service Support"
+            ]
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body id="top">
     <!-- <div class="background-grid"></div>
@@ -2049,6 +2298,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#impact">Impact</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
@@ -2165,6 +2415,150 @@
                     <span class="impact-number" data-target="10" data-suffix="+">0+</span>
                     <p class="impact-description">Analysts trained and mentored on best practices for handling multi-million record datasets</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="case-studies">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Selected Work</div>
+                <h2>Case Studies</h2>
+                <p class="section-description">
+                    Two examples of turning operational data into decisions, scalable processes, and measurable business outcomes.
+                </p>
+            </div>
+
+            <div class="case-studies-grid">
+                <article class="case-study-card fade-in" id="case-volume-forecasting">
+                    <div class="case-study-header">
+                        <div class="case-study-meta">
+                            <span>Citrix</span>
+                            <span>Workforce Planning</span>
+                            <span>3-Day Delivery</span>
+                        </div>
+                        <h3>Forecasting Case Volume for 24/7 Critical Support</h3>
+                        <p class="case-study-lead">
+                            I combined historical support demand, customer growth, offering mix, and churn data from Salesforce and SQL Server to forecast monthly case volume and recommend staffing across three global shifts.
+                        </p>
+                    </div>
+
+                    <div class="case-study-results" aria-label="Case volume forecasting results">
+                        <div class="case-study-result">
+                            <strong>3→11</strong>
+                            <span>Team growth supported within five months</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>24/7</strong>
+                            <span>Coverage planned across three shifts</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>~87%</strong>
+                            <span>Reported forecast performance with ±5% tolerance</span>
+                        </div>
+                    </div>
+
+                    <details class="case-study-details">
+                        <summary>View methodology and decisions</summary>
+                        <div class="case-study-body">
+                            <div class="case-study-block">
+                                <h4>Business problem</h4>
+                                <p>
+                                    The Critical Situation Support team needed to anticipate demand from a growing high-priority customer base without understaffing critical hours or overloading available engineers.
+                                </p>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Approach</h4>
+                                <ul>
+                                    <li>Reconciled case, account, offering, and churn data.</li>
+                                    <li>Built an interpretable multiple linear regression model.</li>
+                                    <li>Analyzed historical demand by geography and hour.</li>
+                                    <li>Translated forecast demand into shift-level headcount recommendations.</li>
+                                </ul>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Why this model</h4>
+                                <p>
+                                    A three-day delivery window favored an explainable model that leadership could understand and use immediately. The model served as a planning baseline rather than a guarantee of future demand.
+                                </p>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Outcome</h4>
+                                <p>
+                                    The forecast informed workforce planning as the team expanded from 3 to 11 members and established continuous coverage. It remained useful for approximately two years without requiring a redesign.
+                                </p>
+                            </div>
+                            <p class="case-study-note">
+                                The retained project record reports approximately 87% accuracy with a ±5% tolerance. Team growth was approved and executed by operational leadership; the forecast informed rather than solely caused that decision.
+                            </p>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="case-study-card fade-in" id="knowledge-center-governance">
+                    <div class="case-study-header">
+                        <div class="case-study-meta">
+                            <span>Citrix</span>
+                            <span>Knowledge Governance</span>
+                            <span>1.5-Year Program</span>
+                        </div>
+                        <h3>Turning a 35,000-Article Knowledge Library into a Governed Data Asset</h3>
+                        <p class="case-study-lead">
+                            I led the data and analytics work to identify stale content, improve article taxonomy through historical case usage, and give technical teams a measurable workflow for continuous review.
+                        </p>
+                    </div>
+
+                    <div class="case-study-results" aria-label="Knowledge Center improvement results">
+                        <div class="case-study-result">
+                            <strong>35K+</strong>
+                            <span>Internal and public knowledge assets governed</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>10K</strong>
+                            <span>Low-value or outdated articles archived</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>7K</strong>
+                            <span>Articles categorized using support-case usage</span>
+                        </div>
+                    </div>
+
+                    <details class="case-study-details">
+                        <summary>View methodology and decisions</summary>
+                        <div class="case-study-body">
+                            <div class="case-study-block">
+                                <h4>Business problem</h4>
+                                <p>
+                                    Duplicate, blank, outdated, and poorly classified content made trusted answers harder to find and limited opportunities for customers and engineers to reuse existing solutions.
+                                </p>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Approach</h4>
+                                <ul>
+                                    <li>Loaded Salesforce article and support-case metadata into SQL Server.</li>
+                                    <li>Defined rules for archival, deprecation, and technical review.</li>
+                                    <li>Used article-to-case associations to recommend product and issue tags.</li>
+                                    <li>Built a dashboard to track progress by product, team, and version.</li>
+                                </ul>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Governance decision</h4>
+                                <p>
+                                    Data rules prioritized the review queue, while technical owners retained final responsibility for accuracy, confidentiality, publication, and archival decisions.
+                                </p>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Long-term value</h4>
+                                <p>
+                                    The cleaner taxonomy improved knowledge reuse and created a stronger content foundation for public self-service, chatbot search, and later LLM-based retrieval initiatives.
+                                </p>
+                            </div>
+                            <p class="case-study-note">
+                                The retained project record does not include a directly attributable case-deflection percentage. The program strengthened the content foundation but was not the sole cause of later channel or support-volume changes.
+                            </p>
+                        </div>
+                    </details>
+                </article>
             </div>
         </div>
     </section>
