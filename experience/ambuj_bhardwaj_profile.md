@@ -1,8 +1,8 @@
 profile:
   name: Ambuj Bhardwaj
-  title: Data Analytics and Analytics Platform Leader
+  title: Data and Analytics Platform Lead
   location: Bangalore, India
-  experience_years: 9+
+  experience_years: 10+
   career_trajectory:
     - Individual Contributor
     - Lead
@@ -48,6 +48,16 @@ tools_and_technologies:
     - Gemini
     - Grok
 
+education:
+  - qualification: Post Graduate Diploma (PGD) in Data Science
+    institution: IIIT Bangalore
+    duration: 2019-2020
+
+  - qualification: Bachelor of Technology (B.Tech)
+    university: Dr. A.P.J. Abdul Kalam Technical University
+    college: Hindustan College of Science and Technology
+    duration: 2012-2016
+
 experience:
   - organization: Tata Consultancy Services
     role: Systems Analyst (Data Analyst)
@@ -86,7 +96,7 @@ experience:
       - Influenced leadership on scoring and metrics redesign
 
   - organization: Skan AI
-    role: Business Intelligence Architect
+    role: Data and Analytics Platform Lead
     duration: 2024-06 to present
     focus:
       - Analytics platform ownership
@@ -97,6 +107,7 @@ experience:
       - Reduced Databricks DBU consumption by 58%
       - Designed scalable warehouse reducing reporting data size by 98%
       - Led Apache Superset implementation
+      - Customized Superset with SSO, verified SQL assistance and semantic-layer-grounded AI text-to-SQL
       - Built internal Power BI documentation and health monitoring tools
 
 chatbot_usage_guidelines:

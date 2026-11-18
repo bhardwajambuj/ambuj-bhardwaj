@@ -35,7 +35,7 @@ visibility_level: multi-team | leadership
 
 - Designed the Analaytical Data Model in MS SQL Server for various Buiness Units. Worked with Data Engineering team to build reliable and reusable datasets for consistent reporting and high performance. Defined the metrics, schema, partitions and indexes. 
 
-- Automated Backlog case tracking to enable close monitoring of aging cases and take proactive actions to close pending cases. Reduced backlogs from 21% to 13% in in 3 months, reduced avg case age of backlog from 30 to 12 days. Earlier it was tracked in Excel and took 1 day to get the numbers out, I moved the entire logic into the Customer Support Power BI dashboard.
+- Designed tiered SLA and case-aging logic and embedded it into the Customer Support Power BI dashboard, replacing a manual Excel process that required one day of preparation. Weekly operational reviews brought approximately 95% of cases within SLA, reduced backlog from 21% to 13% in three months, and lowered average backlog age from 30 to 12 days.
 
 ## Impact & Outcomes
 - Eliminated 95% adhoc data request by build a trustworthy self-serve data product 

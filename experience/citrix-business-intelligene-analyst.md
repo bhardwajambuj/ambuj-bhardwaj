@@ -29,7 +29,7 @@ visibility_level: team | leadership
 ## Key Initiatives / Projects
 - Designed the Case Volume Forecasting model for the Technical Support Escalations team to plan availability of engineers based on the Incoming Case Volumne. This model used a novel approach of blending increasing customer base, offering type, monthly case volume, customer churn. The model perfomed with 87% +-5% accuracy in predicting the monthly case volume. This helped in timely workforce management planning to hire more resources and design shift plans for adequate availability.
 
-- Designed a Tableau Dashboard that supported creation of Quarterly Business Review(QBR) reports for CSM and TAM, in few clicks, ready to download as PowerPoint(ppt) to be shared with customers. This significntly reduced the time to build a QBR from 2 days to 5 mins. 
+- Designed a Tableau dashboard that enabled CSMs and TAMs to generate standardized Quarterly Business Review (QBR) presentations for a selected customer and reporting period in a few clicks, ready to download as PowerPoint or PDF. This reduced QBR preparation time from two days to two minutes and eliminated recurring deck-creation requests to the analytics team.
 
 ## Impact & Outcomes
 - Set the best practice standarads for Tableau dashboard design by using lean and targeted data models rather tahn using transactional tables with entire rows and columns. 

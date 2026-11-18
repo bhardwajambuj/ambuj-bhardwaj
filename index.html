@@ -1521,6 +1521,165 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Case Studies */
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .case-study-card {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+        }
+
+        .case-study-header {
+            min-height: 15.25rem;
+            padding: 2rem;
+        }
+
+        .case-study-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.85rem;
+            margin-bottom: 1rem;
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .case-study-meta span + span::before {
+            content: "/";
+            margin-right: 0.85rem;
+            color: var(--accent);
+        }
+
+        .case-study-card h3 {
+            margin-bottom: 0.85rem;
+            color: var(--text);
+            font-size: clamp(1.45rem, 2.3vw, 2rem);
+            line-height: 1.2;
+        }
+
+        .case-study-lead {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .case-study-results {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            border-block: 1px solid var(--line);
+            background: var(--bg);
+        }
+
+        .case-study-result {
+            min-width: 0;
+            padding: 1.25rem;
+            border-right: 1px solid var(--line);
+        }
+
+        .case-study-result:last-child {
+            border-right: 0;
+        }
+
+        .case-study-result strong {
+            display: block;
+            margin-bottom: 0.4rem;
+            color: var(--accent);
+            font-family: var(--mono);
+            font-size: clamp(1.4rem, 2.4vw, 2rem);
+            line-height: 1;
+        }
+
+        .case-study-result span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.75rem;
+            line-height: 1.45;
+        }
+
+        .case-study-details {
+            margin-top: auto;
+        }
+
+        .case-study-details summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 52px;
+            padding: 0.9rem 2rem;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.88rem;
+            font-weight: 600;
+            list-style: none;
+        }
+
+        .case-study-details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .case-study-details summary::after {
+            content: "+";
+            color: var(--accent);
+            font-family: var(--mono);
+            font-size: 1.2rem;
+        }
+
+        .case-study-details[open] summary {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .case-study-details[open] summary::after {
+            content: "−";
+        }
+
+        .case-study-body {
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        .case-study-block + .case-study-block {
+            margin-top: 1.35rem;
+        }
+
+        .case-study-block h4 {
+            margin-bottom: 0.45rem;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .case-study-block p,
+        .case-study-block li {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        .case-study-block ul {
+            margin: 0;
+            padding-left: 1.15rem;
+        }
+
+        .case-study-block li + li {
+            margin-top: 0.35rem;
+        }
+
+        .case-study-note {
+            padding: 0.9rem 1rem;
+            background: var(--accent-dark);
+            border-left: 2px solid var(--accent);
+            color: var(--muted);
+            font-size: 0.78rem;
+            line-height: 1.55;
+        }
+
         @media (max-width: 768px) {
             .hero {
                 padding-top: 1.25rem;
@@ -1737,9 +1896,51 @@
             }
 
             .impact-grid,
-            .skills-grid {
+            .skills-grid,
+            .case-studies-grid {
                 grid-template-columns: minmax(0, 1fr);
                 gap: 0.85rem;
+            }
+
+            .case-study-header {
+                min-height: 0;
+                padding: 1.35rem;
+            }
+
+            .case-study-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .case-study-results {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .case-study-result {
+                display: grid;
+                grid-template-columns: 5.5rem minmax(0, 1fr);
+                align-items: center;
+                gap: 0.75rem;
+                padding: 0.9rem 1.35rem;
+                border-right: 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .case-study-result:last-child {
+                border-bottom: 0;
+            }
+
+            .case-study-result strong {
+                margin-bottom: 0;
+                font-size: 1.45rem;
+            }
+
+            .case-study-details summary {
+                min-height: 48px;
+                padding-inline: 1.35rem;
+            }
+
+            .case-study-body {
+                padding: 1.25rem 1.35rem 1.5rem;
             }
 
             .impact-card {
@@ -1940,16 +2141,16 @@
 
     <!-- SEO Meta & Social Sharing Tags (added for crawlability and rich previews) -->
     <meta name="description"
-          content="Ambuj Bhardwaj is a data analytics leader with 9+ years of experience in BI strategy, data platforms, Power BI, Apache Superset, Databricks, and analytics-driven business impact across enterprises.">
+          content="Ambuj Bhardwaj is a data analytics leader with 10+ years of experience in BI strategy, data platforms, Power BI, Apache Superset, Databricks, and analytics-driven business impact across enterprises.">
     <meta name="author" content="Ambuj Bhardwaj">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
     <link rel="canonical" href="https://ambuj93.github.io/portfolio/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Ambuj Bhardwaj | Data Analytics Leader">
+    <meta property="og:title" content="Ambuj Bhardwaj | Data and Analytics Platform Lead">
     <meta property="og:description"
-          content="Data analytics professional with 9+ years of experience in BI strategy, data platforms, Power BI, Apache Superset, Databricks, and enterprise-scale analytics impact.">
+          content="Data analytics professional with 10+ years of experience in BI strategy, data platforms, Power BI, Apache Superset, Databricks, and enterprise-scale analytics impact.">
     <meta property="og:image" content="https://static.topmate.io/h17CEkRYgc9u7SWz4aoZa2.jpg">
     <meta property="og:url" content="https://ambuj93.github.io/portfolio/">
     <meta property="og:type" content="profile">
@@ -1957,9 +2158,9 @@
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ambuj Bhardwaj | Data Analytics Leader">
+    <meta name="twitter:title" content="Ambuj Bhardwaj | Data and Analytics Platform Lead">
     <meta name="twitter:description"
-          content="9+ years in data analytics, BI strategy, and data platforms. Power BI, Superset, Databricks.">
+          content="10+ years in data analytics, BI strategy, and data platforms. Power BI, Superset, Databricks.">
     <meta name="twitter:image" content="https://static.topmate.io/h17CEkRYgc9u7SWz4aoZa2.jpg">
 
     <!-- JSON-LD structured data for Person, ProfilePage, and WebSite -->
@@ -1971,11 +2172,25 @@
       "name": "Ambuj Bhardwaj",
       "url": "https://ambuj93.github.io/portfolio/",
       "image": "https://static.topmate.io/h17CEkRYgc9u7SWz4aoZa2.jpg",
-      "jobTitle": "Data Analytics Leader",
-      "description": "Data analytics leader with over 9 years of experience in BI strategy, data platforms, and enterprise analytics delivering measurable business impact.",
+      "jobTitle": "Data and Analytics Platform Lead",
+      "description": "Data analytics leader with over 10 years of experience in BI strategy, data platforms, and enterprise analytics delivering measurable business impact.",
       "sameAs": [
         "https://www.linkedin.com/in/ambuj-bhardwaj/",
-        "https://github.com/ambuj93"
+        "https://github.com/bhardwajambuj"
+      ],
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "IIIT Bangalore"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Dr. A.P.J. Abdul Kalam Technical University"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Hindustan College of Science and Technology"
+        }
       ],
       "knowsAbout": [
         "Data Analytics",
@@ -1986,6 +2201,8 @@
         "Apache Superset",
         "Databricks",
         "Data Warehousing",
+        "Semantic Layers",
+        "AI-Assisted Analytics",
         "Process Mining",
         "Enterprise Reporting",
         "Analytics Cost Optimization"
@@ -2002,7 +2219,7 @@
         "name": "Ambuj Bhardwaj",
         "hasOccupation": {
           "@type": "Occupation",
-          "name": "Data Analytics Leader",
+          "name": "Data and Analytics Platform Lead",
           "skills": [
             "BI Strategy",
             "Data Platform Architecture",
@@ -2033,6 +2250,130 @@
       "inLanguage": "en"
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Data Analytics Case Studies by Ambuj Bhardwaj",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://ambuj93.github.io/portfolio/#case-volume-forecasting",
+            "url": "https://ambuj93.github.io/portfolio/#case-volume-forecasting",
+            "name": "Forecasting Case Volume for 24/7 Critical Support",
+            "description": "A Citrix workforce-planning case study combining support demand, customer growth, offering mix, and churn to forecast case volume and recommend staffing across three shifts.",
+            "author": {
+              "@id": "https://ambuj93.github.io/portfolio/#ambuj-bhardwaj"
+            },
+            "about": [
+              "Demand Forecasting",
+              "Workforce Planning",
+              "Support Analytics"
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://ambuj93.github.io/portfolio/#knowledge-center-governance",
+            "url": "https://ambuj93.github.io/portfolio/#knowledge-center-governance",
+            "name": "Turning a 35,000-Article Knowledge Library into a Governed Data Asset",
+            "description": "A Citrix knowledge-governance case study covering content cleanup, usage-based classification, review monitoring, and preparation for self-service and AI retrieval.",
+            "author": {
+              "@id": "https://ambuj93.github.io/portfolio/#ambuj-bhardwaj"
+            },
+            "about": [
+              "Knowledge Management",
+              "Content Governance",
+              "Self-Service Support"
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://ambuj93.github.io/portfolio/#superset-ai-sql-assistant",
+            "url": "https://ambuj93.github.io/portfolio/#superset-ai-sql-assistant",
+            "name": "Building a Branded Superset AI SQL Assistant",
+            "description": "A Skan AI platform case study combining SSO, curated verified SQL, semantic-layer-grounded text-to-SQL, and AI interaction observability.",
+            "author": {
+              "@id": "https://ambuj93.github.io/portfolio/#ambuj-bhardwaj"
+            },
+            "about": [
+              "Apache Superset",
+              "AI-Assisted SQL",
+              "Semantic Layer"
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://ambuj93.github.io/portfolio/#platform-capacity-optimization",
+            "url": "https://ambuj93.github.io/portfolio/#platform-capacity-optimization",
+            "name": "Optimizing Power BI Capacity and Databricks Cost",
+            "description": "A platform optimization case study that consolidated refresh execution and reduced Power BI utilization and Databricks DBU consumption.",
+            "author": {
+              "@id": "https://ambuj93.github.io/portfolio/#ambuj-bhardwaj"
+            },
+            "about": [
+              "Power BI",
+              "Databricks",
+              "Cost Optimization"
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://ambuj93.github.io/portfolio/#trusted-self-service-analytics",
+            "url": "https://ambuj93.github.io/portfolio/#trusted-self-service-analytics",
+            "name": "Consolidating Enterprise BI into Trusted Self-Service Analytics",
+            "description": "A Citrix BI modernization case study that rationalized 120 Tableau dashboards into three governed Power BI solutions.",
+            "author": {
+              "@id": "https://ambuj93.github.io/portfolio/#ambuj-bhardwaj"
+            },
+            "about": [
+              "Power BI",
+              "Self-Service Analytics",
+              "Dashboard Rationalization"
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://ambuj93.github.io/portfolio/#document-search-engine",
+            "url": "https://ambuj93.github.io/portfolio/#document-search-engine",
+            "name": "Building a Ranked Search Engine in Excel and VBA",
+            "description": "A TCS information-retrieval case study that indexed 118 aircraft-manufacturing files and returned ranked source documents.",
+            "author": {
+              "@id": "https://ambuj93.github.io/portfolio/#ambuj-bhardwaj"
+            },
+            "about": [
+              "Information Retrieval",
+              "Excel",
+              "VBA"
+            ]
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body id="top">
     <!-- <div class="background-grid"></div>
@@ -2049,8 +2390,10 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#impact">Impact</a></li>
-                <li><a href="#experience">Experience</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
             </ul>
             <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -2066,7 +2409,7 @@
             <div class="hero-brief">
                 <div class="hero-layout">
                     <div class="hero-copy">
-                        <p class="hero-eyebrow">Business Intelligence Architect · 10 years in analytics</p>
+                        <p class="hero-eyebrow">Data and Analytics Platform Lead · 10 years in analytics</p>
                         <h1 id="hero-title" class="hero-title">
                             I help businesses design <em>scalable analytics systems</em> — from data warehouse architecture and BI platforms to self-service analytics and AI-ready data layers.
                         </h1>
@@ -2154,8 +2497,8 @@
                     <p class="impact-description">Annual cost savings delivered through automation initiatives and workflow optimization at TCS</p>
                 </div>
                 <div class="impact-card fade-in">
-                    <span class="impact-number" data-target-text="2 days→5 min">2 days→5 min</span>
-                    <p class="impact-description">Time reduction for QBR creation through automated PowerPoint generation dashboard</p>
+                    <span class="impact-number" data-target-text="2 days→2 min">2 days→2 min</span>
+                    <p class="impact-description">Time reduction for QBR creation through self-service PowerPoint and PDF generation</p>
                 </div>
                 <div class="impact-card fade-in">
                     <span class="impact-number" data-target-text="21%→13%">21%→13%</span>
@@ -2164,6 +2507,438 @@
                 <div class="impact-card fade-in">
                     <span class="impact-number" data-target="10" data-suffix="+">0+</span>
                     <p class="impact-description">Analysts trained and mentored on best practices for handling multi-million record datasets</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="case-studies">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Selected Work</div>
+                <h2>Case Studies</h2>
+                <p class="section-description">
+                    Six examples of turning operational data, platform architecture, and AI-assisted analytics into scalable capabilities and measurable outcomes.
+                </p>
+            </div>
+
+            <div class="case-studies-grid">
+                <article class="case-study-card fade-in" id="case-volume-forecasting">
+                    <div class="case-study-header">
+                        <div class="case-study-meta">
+                            <span>Citrix</span>
+                            <span>Workforce Planning</span>
+                            <span>3-Day Delivery</span>
+                        </div>
+                        <h3>Forecasting Case Volume for 24/7 Critical Support</h3>
+                        <p class="case-study-lead">
+                            I combined historical support demand, customer growth, offering mix, and churn data from Salesforce and SQL Server to forecast monthly case volume and recommend staffing across three global shifts.
+                        </p>
+                    </div>
+
+                    <div class="case-study-results" aria-label="Case volume forecasting results">
+                        <div class="case-study-result">
+                            <strong>3→11</strong>
+                            <span>Team growth supported within five months</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>24/7</strong>
+                            <span>Coverage planned across three shifts</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>~87%</strong>
+                            <span>Reported forecast performance with ±5% tolerance</span>
+                        </div>
+                    </div>
+
+                    <details class="case-study-details">
+                        <summary>View methodology and decisions</summary>
+                        <div class="case-study-body">
+                            <div class="case-study-block">
+                                <h4>Business problem</h4>
+                                <p>
+                                    The Critical Situation Support team needed to anticipate demand from a growing high-priority customer base without understaffing critical hours or overloading available engineers.
+                                </p>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Approach</h4>
+                                <ul>
+                                    <li>Reconciled case, account, offering, and churn data.</li>
+                                    <li>Built an interpretable multiple linear regression model.</li>
+                                    <li>Analyzed historical demand by geography and hour.</li>
+                                    <li>Translated forecast demand into shift-level headcount recommendations.</li>
+                                </ul>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Why this model</h4>
+                                <p>
+                                    A three-day delivery window favored an explainable model that leadership could understand and use immediately. The model served as a planning baseline rather than a guarantee of future demand.
+                                </p>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Outcome</h4>
+                                <p>
+                                    The forecast informed workforce planning as the team expanded from 3 to 11 members and established continuous coverage. It remained useful for approximately two years without requiring a redesign.
+                                </p>
+                            </div>
+                            <p class="case-study-note">
+                                The retained project record reports approximately 87% accuracy with a ±5% tolerance. Team growth was approved and executed by operational leadership; the forecast informed rather than solely caused that decision.
+                            </p>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="case-study-card fade-in" id="knowledge-center-governance">
+                    <div class="case-study-header">
+                        <div class="case-study-meta">
+                            <span>Citrix</span>
+                            <span>Knowledge Governance</span>
+                            <span>1.5-Year Program</span>
+                        </div>
+                        <h3>Turning a 35,000-Article Knowledge Library into a Governed Data Asset</h3>
+                        <p class="case-study-lead">
+                            I led the data and analytics work to identify stale content, improve article taxonomy through historical case usage, and give technical teams a measurable workflow for continuous review.
+                        </p>
+                    </div>
+
+                    <div class="case-study-results" aria-label="Knowledge Center improvement results">
+                        <div class="case-study-result">
+                            <strong>35K+</strong>
+                            <span>Internal and public knowledge assets governed</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>10K</strong>
+                            <span>Low-value or outdated articles archived</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>7K</strong>
+                            <span>Articles categorized using support-case usage</span>
+                        </div>
+                    </div>
+
+                    <details class="case-study-details">
+                        <summary>View methodology and decisions</summary>
+                        <div class="case-study-body">
+                            <div class="case-study-block">
+                                <h4>Business problem</h4>
+                                <p>
+                                    Duplicate, blank, outdated, and poorly classified content made trusted answers harder to find and limited opportunities for customers and engineers to reuse existing solutions.
+                                </p>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Approach</h4>
+                                <ul>
+                                    <li>Loaded Salesforce article and support-case metadata into SQL Server.</li>
+                                    <li>Defined rules for archival, deprecation, and technical review.</li>
+                                    <li>Used article-to-case associations to recommend product and issue tags.</li>
+                                    <li>Built a dashboard to track progress by product, team, and version.</li>
+                                </ul>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Governance decision</h4>
+                                <p>
+                                    Data rules prioritized the review queue, while technical owners retained final responsibility for accuracy, confidentiality, publication, and archival decisions.
+                                </p>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Long-term value</h4>
+                                <p>
+                                    The cleaner taxonomy improved knowledge reuse and created a stronger content foundation for public self-service, chatbot search, and later LLM-based retrieval initiatives.
+                                </p>
+                            </div>
+                            <p class="case-study-note">
+                                The retained project record does not include a directly attributable case-deflection percentage. The program strengthened the content foundation but was not the sole cause of later channel or support-volume changes.
+                            </p>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="case-study-card fade-in" id="superset-ai-sql-assistant">
+                    <div class="case-study-header">
+                        <div class="case-study-meta">
+                            <span>Skan AI</span>
+                            <span>Embedded Analytics</span>
+                            <span>AI-Assisted SQL</span>
+                        </div>
+                        <h3>Building a Branded Superset AI SQL Assistant</h3>
+                        <p class="case-study-lead">
+                            I led the customization of Superset into a Skan-branded, SSO-enabled analytics experience with verified SQL assistance and semantic-layer-grounded text-to-SQL.
+                        </p>
+                    </div>
+
+                    <div class="case-study-results" aria-label="Superset AI SQL assistant capabilities">
+                        <div class="case-study-result">
+                            <strong>SSO</strong>
+                            <span>Integrated authentication experience</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>2 paths</strong>
+                            <span>Verified FAQs and AI-generated SQL</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>Traceable</strong>
+                            <span>Questions, responses, latency, and tokens logged</span>
+                        </div>
+                    </div>
+
+                    <details class="case-study-details">
+                        <summary>View product design and architecture</summary>
+                        <div class="case-study-body">
+                            <div class="case-study-block">
+                                <h4>Business problem</h4>
+                                <p>
+                                    SQL Lab assumed that users already understood schemas, relationships, grain, and metric definitions. New users needed a faster and safer way to begin analysis.
+                                </p>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Assisted workflow</h4>
+                                <ul>
+                                    <li>Organized common questions into categories and subcategories.</li>
+                                    <li>Allowed verified SQL to be inserted directly into the editor.</li>
+                                    <li>Enabled plain-English questions through an AI agent grounded in semantic documentation.</li>
+                                </ul>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Evaluation framework</h4>
+                                <p>
+                                    The platform captures questions, model responses, generated SQL, response time, and token consumption to support quality evaluation, cost optimization, continuous improvement, and traceability.
+                                </p>
+                            </div>
+                            <p class="case-study-note">
+                                Selected and generated SQL remains visible in SQL Lab for user review before execution; normal access controls continue to apply.
+                            </p>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="case-study-card fade-in" id="platform-capacity-optimization">
+                    <div class="case-study-header">
+                        <div class="case-study-meta">
+                            <span>Skan AI</span>
+                            <span>Platform Operations</span>
+                            <span>Cost Optimization</span>
+                        </div>
+                        <h3>Optimizing Power BI Capacity and Databricks Cost</h3>
+                        <p class="case-study-lead">
+                            I connected Power BI refresh behavior with upstream Databricks workloads and redesigned scheduling around data readiness, business usage, and available capacity.
+                        </p>
+                    </div>
+
+                    <div class="case-study-results" aria-label="Platform capacity optimization results">
+                        <div class="case-study-result">
+                            <strong>85%→45%</strong>
+                            <span>Power BI capacity utilization</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>−58%</strong>
+                            <span>Databricks DBU consumption</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>22→5h</strong>
+                            <span>Daily refresh execution window</span>
+                        </div>
+                    </div>
+
+                    <details class="case-study-details">
+                        <summary>View optimization approach</summary>
+                        <div class="case-study-body">
+                            <div class="case-study-block">
+                                <h4>Business problem</h4>
+                                <p>
+                                    Scattered and overlapping refreshes kept Power BI capacity and Databricks SQL resources active for most of the day, reducing headroom and increasing cost.
+                                </p>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Approach</h4>
+                                <ul>
+                                    <li>Analyzed refresh duration, frequency, overlap, and capacity consumption.</li>
+                                    <li>Correlated BI activity with upstream pipeline completion and Databricks usage.</li>
+                                    <li>Centralized execution into a controlled five-hour window.</li>
+                                </ul>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Architecture decision</h4>
+                                <p>
+                                    Refresh schedules were driven by data readiness and business freshness requirements rather than arbitrary times, while monitoring protected against creating a new concentrated peak.
+                                </p>
+                            </div>
+                            <p class="case-study-note">
+                                Outcomes are approximate project measures; utilization definitions and measurement windows should accompany external financial claims.
+                            </p>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="case-study-card fade-in" id="trusted-self-service-analytics">
+                    <div class="case-study-header">
+                        <div class="case-study-meta">
+                            <span>Citrix</span>
+                            <span>BI Modernization</span>
+                            <span>Self-Service Analytics</span>
+                        </div>
+                        <h3>Consolidating Enterprise BI into Trusted Self-Service Analytics</h3>
+                        <p class="case-study-lead">
+                            I led dashboard discovery, requirement rationalization, data-model design, and Power BI delivery to replace fragmented Tableau reporting with governed business-unit solutions.
+                        </p>
+                    </div>
+
+                    <div class="case-study-results" aria-label="Self-service analytics transformation results">
+                        <div class="case-study-result">
+                            <strong>120→3</strong>
+                            <span>Tableau dashboards consolidated</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>−95%</strong>
+                            <span>Ad hoc data requests</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>3</strong>
+                            <span>Analysts led and mentored</span>
+                        </div>
+                    </div>
+
+                    <details class="case-study-details">
+                        <summary>View transformation approach</summary>
+                        <div class="case-study-body">
+                            <div class="case-study-block">
+                                <h4>Business problem</h4>
+                                <p>
+                                    Individual dashboard requests created duplicated reports, conflicting definitions, recurring data-quality debates, and avoidable licensing and maintenance costs.
+                                </p>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Approach</h4>
+                                <ul>
+                                    <li>Inventoried approximately 120 dashboards across three business units.</li>
+                                    <li>Consolidated requirements around decisions and shared audiences.</li>
+                                    <li>Aligned directors and VPs on KPIs before development.</li>
+                                </ul>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Data foundation</h4>
+                                <p>
+                                    Salesforce, Workday, Genesys, and operational data were integrated into reusable SQL Server models that supported consistent Power BI metrics and governed self-service.
+                                </p>
+                            </div>
+                            <p class="case-study-note">
+                                The migration reduced Tableau licensing dependency; the retained project record does not include a publishable currency value for the savings.
+                            </p>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="case-study-card fade-in" id="document-search-engine">
+                    <div class="case-study-header">
+                        <div class="case-study-meta">
+                            <span>TCS</span>
+                            <span>Information Retrieval</span>
+                            <span>Process Automation</span>
+                        </div>
+                        <h3>Building a Ranked Search Engine in Excel and VBA</h3>
+                        <p class="case-study-lead">
+                            I built a term-frequency search engine for an aerospace team working in a restricted environment, replacing repeated manual searches across aircraft-manufacturing documents.
+                        </p>
+                    </div>
+
+                    <div class="case-study-results" aria-label="Document search engine results">
+                        <div class="case-study-result">
+                            <strong>118</strong>
+                            <span>Aircraft-manufacturing files indexed</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>Top 3–5</strong>
+                            <span>Ranked source documents returned</span>
+                        </div>
+                        <div class="case-study-result">
+                            <strong>Up to 32m</strong>
+                            <span>Estimated saving per query</span>
+                        </div>
+                    </div>
+
+                    <details class="case-study-details">
+                        <summary>View retrieval design</summary>
+                        <div class="case-study-body">
+                            <div class="case-study-block">
+                                <h4>Business problem</h4>
+                                <p>
+                                    Engineers manually opened and reviewed 5–8 workbooks to locate prior assembly and quality information needed for new or revised documents.
+                                </p>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Design</h4>
+                                <ul>
+                                    <li>Parsed and indexed content from 118 Excel files.</li>
+                                    <li>Built a term-frequency matrix and ranked query results.</li>
+                                    <li>Linked to source workbooks and highlighted matching cells.</li>
+                                </ul>
+                            </div>
+                            <div class="case-study-block">
+                                <h4>Constraint-led engineering</h4>
+                                <p>
+                                    Excel and VBA were the available tools. Pre-indexing made ranked retrieval practical without introducing new infrastructure or changing the controlled source-document workflow.
+                                </p>
+                            </div>
+                            <p class="case-study-note">
+                                The time saving is an estimate based on observed manual review effort, not a controlled time-and-motion study.
+                            </p>
+                        </div>
+                    </details>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Core Competencies</div>
+                <h2>Skills & Expertise</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>BI & Analytics Platforms</h3>
+                    <ul class="skill-list">
+                        <li>Power BI</li>
+                        <li>Tableau</li>
+                        <li>Apache Superset</li>
+                        <li>DAX & Power Query</li>
+                        <li>Embedded Analytics</li>
+                        <li>Self-Service Analytics</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Data Platforms</h3>
+                    <ul class="skill-list">
+                        <li>Databricks & PySpark</li>
+                        <li>StarRocks</li>
+                        <li>PostgreSQL</li>
+                        <li>Microsoft SQL Server</li>
+                        <li>Delta Lake</li>
+                        <li>Azure Blob Storage</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Architecture & AI</h3>
+                    <ul class="skill-list">
+                        <li>Data Warehouse Architecture</li>
+                        <li>Analytical Data Modeling</li>
+                        <li>Semantic Layer Design</li>
+                        <li>AI Text-to-SQL</li>
+                        <li>LLM Observability</li>
+                        <li>Auth0 & SSO</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Leadership & Governance</h3>
+                    <ul class="skill-list">
+                        <li>Analytics Platform Strategy</li>
+                        <li>Team Building & Mentoring</li>
+                        <li>Stakeholder Management</li>
+                        <li>Executive Communication</li>
+                        <li>Performance & Cost Optimization</li>
+                        <li>BI Governance</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -2187,7 +2962,7 @@
                                 <div>
                                     <h3>Skan AI</h3>
                                     <div class="role-meta">
-                                        <span class="role-title">Business Intelligence Architect</span>
+                                        <span class="role-title">Data and Analytics Platform Lead</span>
                                         <span class="location">Bangalore, India</span>
                                     </div>
                                 </div>
@@ -2196,12 +2971,13 @@
                         </summary>
                         <div class="experience-content">
                             <p class="experience-description">
-                                Leading BI strategy and architecture for a fast-paced process mining startup, managing entire data and analytics platforms while working with large-scale streaming and batch processed clickstream data.
+                                Leading data and analytics platform strategy for a fast-paced process mining startup, spanning embedded analytics, data warehousing, AI-assisted SQL, platform operations, and large-scale clickstream data.
                             </p>
                             <ul class="highlights">
                                 <li><strong>Cost Optimization:</strong> Reduced Power BI capacity usage from 85% to 45% and Databricks DBU consumption by 58% through strategic data refresh alignment</li>
                                 <li><strong>Performance Engineering:</strong> Achieved 80% faster report refresh times and 98% reduction in data size through data warehouse design</li>
                                 <li><strong>Platform Migration:</strong> Led multi-phase transition to Apache Superset, building team capability with new hires and defining implementation roadmap for on-prem deployment</li>
+                                <li><strong>AI-Assisted Analytics:</strong> Customized Superset with Skan branding, SSO, categorized verified SQL, semantic-layer-grounded text-to-SQL, and telemetry for quality, latency, tokens, cost, and traceability</li>
                                 <li><strong>Innovation:</strong> Built PBI Doctor - a Python GUI app for Power BI metadata extraction and technical documentation, presented company-wide</li>
                                 <li><strong>Team Leadership:</strong> Built and led teams of 3 analysts + 1 engineer (direct) and 10 customer-facing analysts (indirect)</li>
                             </ul>
@@ -2213,6 +2989,8 @@
                                 <span class="tech-tag">StarRocks</span>
                                 <span class="tech-tag">Python</span>
                                 <span class="tech-tag">PySpark</span>
+                                <span class="tech-tag">Auth0</span>
+                                <span class="tech-tag">LLMs</span>
                                 <span class="tech-tag">Cursor</span>
                             </div>
                         </div>
@@ -2277,7 +3055,7 @@
                             <ul class="highlights">
                                 <li><strong>Performance Optimization:</strong> Improved Tableau dashboard performance by 97% through SQL optimization and lean data modeling</li>
                                 <li><strong>Forecasting Model:</strong> Built case volume prediction model with 87% ±5% accuracy using novel approach blending customer base, offerings, and churn data</li>
-                                <li><strong>Automation Impact:</strong> Reduced QBR creation time from 2 days to 5 minutes with click-to-PowerPoint dashboard</li>
+                                <li><strong>Automation Impact:</strong> Reduced QBR creation time from 2 days to 2 minutes with self-service PowerPoint and PDF generation</li>
                                 <li><strong>Dashboard Portfolio:</strong> Built 12 dashboards tracking NPS, case volume, deals, product lines, FDR, FCR, and case metrics</li>
                                 <li><strong>Knowledge Sharing:</strong> Evangelized SQL adoption, organized training sessions across departments</li>
                             </ul>
@@ -2325,78 +3103,27 @@
         </div>
     </section>
 
-    <section id="skills">
+    <section id="education">
         <div class="container">
             <div class="section-header fade-in">
-                <div class="section-label">Core Competencies</div>
-                <h2>Skills & Expertise</h2>
+                <div class="section-label">Academic Background</div>
+                <h2>Education</h2>
             </div>
 
             <div class="skills-grid">
                 <div class="skill-category fade-in">
-                    <h3>BI & Analytics Platform</h3>
+                    <h3>Post Graduate Diploma (PGD) in Data Science</h3>
                     <ul class="skill-list">
-                        <li>Power BI (Advanced)</li>
-                        <li>Tableau (Expert)</li>
-                        <li>Apache Superset</li>
-                        <li>Self-Service Analytics Design</li>
-                        <li>Dashboard Optimization</li>
-                        <li>BI Strategy & Governance</li>
+                        <li>IIIT Bangalore</li>
+                        <li>2019–2020</li>
                     </ul>
                 </div>
                 <div class="skill-category fade-in">
-                    <h3>Data Engineering</h3>
+                    <h3>Bachelor of Technology (B.Tech)</h3>
                     <ul class="skill-list">
-                        <li>Data Warehouse Architecture</li>
-                        <li>Databricks & PySpark</li>
-                        <li>MS SQL Server</li>
-                        <li>Postgres SQL</li>
-                        <li>StarRocks</li>
-                        <li>ETL/ELT Pipelines</li>
-                    </ul>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3>Technical Skills</h3>
-                    <ul class="skill-list">
-                        <li>SQL (Advanced)</li>
-                        <li>Python & VBA</li>
-                        <li>DAX & M Query</li>
-                        <li>Git Version Control</li>
-                        <li>Data Modeling</li>
-                        <li>Performance Optimization</li>
-                    </ul>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3>Leadership & Strategy</h3>
-                    <ul class="skill-list">
-                        <li>Team Building & Mentoring</li>
-                        <li>Stakeholder Management</li>
-                        <li>Executive Communication</li>
-                        <li>Program Planning & Execution</li>
-                        <li>Requirement Gathering</li>
-                        <li>Process Improvement</li>
-                    </ul>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3>Data Integration</h3>
-                    <ul class="skill-list">
-                        <li>Salesforce</li>
-                        <li>Genesys</li>
-                        <li>Workday</li>
-                        <li>Google Cloud Platform</li>
-                        <li>Azure Blob Storage</li>
-                        <li>Multi-Source Integration</li>
-                    </ul>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3>Domains</h3>
-                    <ul class="skill-list">
-                        <li>Customer Success Analytics</li>
-                        <li>Technical Support Operations</li>
-                        <li>Process Mining</li>
-                        <li>Workforce Management</li>
-                        <li>Digital Experience Analytics</li>
-                        <li>Knowledge Management</li>
+                        <li>Dr. A.P.J. Abdul Kalam Technical University</li>
+                        <li>Hindustan College of Science and Technology</li>
+                        <li>2012–2016</li>
                     </ul>
                 </div>
             </div>
@@ -2477,7 +3204,7 @@
                     </span>
                     <span>
                         <span class="footer-brand__name">Ambuj Bhardwaj</span>
-                        <span class="footer-brand__role">Business Intelligence Architect</span>
+                        <span class="footer-brand__role">Data and Analytics Platform Lead</span>
                     </span>
                 </a>
                 <p class="footer-text">📍 Bangalore, India</p>
