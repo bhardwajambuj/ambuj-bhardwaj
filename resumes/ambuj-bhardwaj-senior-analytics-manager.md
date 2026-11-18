@@ -1,6 +1,6 @@
 # AMBUJ BHARDWAJ
-## SENIOR ANALYTICS MANAGER
-Bangalore, India | ambuj.mtr@gmail.com | linkedin.com/in/ambuj-bhardwaj | github.com/bhardwajambuj | ambuj93.github.io/portfolio
+## DATA AND AI ANALYTICS MANAGER
+Bangalore, India | ambuj.mtr@gmail.com | linkedin.com/in/ambuj-bhardwaj | github.com/bhardwajambuj | bhardwajambuj.github.io/ambuj-bhardwaj
 
 ## PROFESSIONAL SUMMARY
 Analytics leader with 10+ years of experience delivering BI strategy, analytics platforms, data products, and operational decision support across AI, enterprise SaaS, and consulting organizations. Leads cross-functional programs from business problem definition through architecture, adoption, and measurable outcomes. Experienced in building analytics capability, mentoring teams, influencing executives, improving data trust, and scaling self-service analytics.

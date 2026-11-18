@@ -1,6 +1,6 @@
 # AMBUJ BHARDWAJ
-## ANALYTICS PLATFORM ARCHITECT
-Bangalore, India | ambuj.mtr@gmail.com | linkedin.com/in/ambuj-bhardwaj | github.com/bhardwajambuj | ambuj93.github.io/portfolio
+## DATA AND AI ANALYTICS PLATFORM LEAD
+Bangalore, India | ambuj.mtr@gmail.com | linkedin.com/in/ambuj-bhardwaj | github.com/bhardwajambuj | bhardwajambuj.github.io/ambuj-bhardwaj
 
 ## PROFESSIONAL SUMMARY
 Analytics platform architect with 10+ years of experience across AI startups, enterprise SaaS, and consulting. Designs scalable analytics platforms, data warehouses, embedded BI, and semantic foundations across Power BI, Apache Superset, Databricks, and StarRocks. Proven record of reducing platform cost and capacity consumption, modernizing complex BI estates, and translating business requirements into secure, observable, customer-facing analytics capabilities.
